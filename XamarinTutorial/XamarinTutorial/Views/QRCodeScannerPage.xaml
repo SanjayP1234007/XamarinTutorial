@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+             x:Class="XamarinTutorial.Views.QRCodeScannerPage"
+             Background="#042C6B"
+             NavigationPage.HasNavigationBar="False"
+             NavigationPage.HasBackButton="False">
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="80"/>
+            </Grid.RowDefinitions>
+            <Label x:Name="QrCodeInfo" Grid.Row="1"   FontSize="15" TextTransform="None" HorizontalOptions="FillAndExpand" Margin="10,20,0,0" HeightRequest="70" TextColor="White" />
+            <Frame Grid.Row="2" BorderColor="Red" HeightRequest="500" Padding="0" Margin="10,10,10,10" CornerRadius="10">
+                <zxing:ZXingScannerView x:Name="zxingScanner" VerticalOptions="FillAndExpand" OnScanResult="zxingScanner_OnScanResult"/>
+            </Frame>
+            <!--Footer Navigation-->
+            <StackLayout   BackgroundColor="#00245D" Grid.Row="3"  Orientation="Horizontal" VerticalOptions="Start" HeightRequest="80">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer
+                Command="{Binding NavigateBackCommand}"
+                NumberOfTapsRequired="1" />
+                </StackLayout.GestureRecognizers>
+                <ImageButton HorizontalOptions="EndAndExpand" HeightRequest="30" WidthRequest="50" Margin="10" Clicked="FlashlightButton_Clicked" BackgroundColor="Transparent" Source="FlashImg.png"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

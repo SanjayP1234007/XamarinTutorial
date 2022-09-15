@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Name="CustomLoaderView"
+             xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:LoaderView="clr-namespace:XamarinTutorial.CustomizedControls.CustomLoader"
+             x:Class="XamarinTutorial.CustomizedControls.CustomLoader.CustomLoader">
+    <ContentView.Content>
+        <Frame x:Name="Loader"                         
+           HasShadow="False" 
+           BackgroundColor="Transparent"
+           HorizontalOptions="Center" 
+           VerticalOptions="Center">
+            <Grid HorizontalOptions="FillAndExpand">
+                <LoaderView:CustomPNGControl HeightRequest="400" WidthRequest="400" />
+                <Label  FontSize="20"  Text="{Binding Source={x:Reference CustomLoaderView},Path=SetloaderText}" x:Name="LblLoaderText" TextTransform="Uppercase" FontAttributes="Bold" TextColor="White" LineBreakMode="WordWrap" HorizontalOptions="CenterAndExpand"  VerticalOptions="CenterAndExpand"/>
+            </Grid>
+        </Frame>
+    </ContentView.Content>
+</ContentView>

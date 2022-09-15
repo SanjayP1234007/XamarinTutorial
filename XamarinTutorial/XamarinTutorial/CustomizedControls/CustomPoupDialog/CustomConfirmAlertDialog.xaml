@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinTutorial.CustomizedControls.CustomPoupDialog.CustomConfirmAlertDialog">
+    <ContentView.Content>
+        <Frame x:Name="ButtonMenuWrapper"                         
+           HasShadow="False" 
+           BackgroundColor="White"
+           IsClippedToBounds="True" 
+           CornerRadius="20" 
+           Padding="0" 
+           HorizontalOptions="Center" 
+           VerticalOptions="Center">
+            <Grid WidthRequest="300" HeightRequest="250"  x:Name="MainGrid"
+            Padding="10"
+            BackgroundColor="#053A8E"
+            HorizontalOptions="CenterAndExpand" 
+            VerticalOptions="CenterAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5" />
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="5"/>
+                </Grid.RowDefinitions>
+                <StackLayout Orientation="Vertical" Grid.Row="1">
+                    <Label x:Name="TitleLabel" FontSize="Medium" TextColor="White" Grid.Row="0" Margin="15,0,0,0"/>
+                    <Label x:Name="MessageTextLabel"   LineBreakMode="WordWrap" Margin="7,15,0,0"  TextColor="White" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" VerticalOptions="Center" VerticalTextAlignment="Center" FontSize="16"/>
+                </StackLayout>
+                <StackLayout  Grid.Row="2">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="2"/>
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="1" x:Name="NoButton" FontSize="16"  
+                                         HorizontalOptions="CenterAndExpand" 
+                                         VerticalOptions="CenterAndExpand"   
+                                         BorderColor="#871f26"  
+                                         BackgroundColor="#df4b55"  
+                                         TextColor="White"  
+                                         BorderRadius="25"  
+                                         BorderWidth="4"
+                                         Padding="10"
+                                         WidthRequest="140"
+                                         Margin="0,0,5,0"
+                                          />
+                        <Button x:Name="YesButton"  Grid.Column="2"  FontSize="16" HorizontalOptions="CenterAndExpand" 
+                                         VerticalOptions="CenterAndExpand"   
+                                         BorderColor="#871f26"  
+                                         BackgroundColor="#df4b55"  
+                                         TextColor="White"  
+                                         BorderRadius="25"  
+                                         BorderWidth="4" 
+                                         WidthRequest="140"
+                                         Margin="15,0,0,0"
+                                                   />
+
+                    </Grid>
+                </StackLayout>
+            </Grid>
+        </Frame>
+    </ContentView.Content>
+</ContentView>
